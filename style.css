@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top left, #0a0f1a, #020409);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* === Navbar Base === */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  background: rgba(15, 25, 40, 0.6);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+.logo {
+  color: #00ffff;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.logo:hover {
+  text-shadow: 0 0 15px #00ffff, 0 0 40px #00e5ff;
+}
+
+/* === Nav Links === */
+.navbar__links ul {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.navbar__links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #00ffff;
+  transition: 0.3s;
+}
+
+.navbar__links a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.navbar__links a:hover::after {
+  width: 100%;
+}
+
+/* === Button === */
+.login-btn {
+  background: linear-gradient(135deg, #00e5ff, #00bcd4);
+  padding: 10px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #0a0f1a;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #00ffff, #33ccff);
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+/* === Hamburger === */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 28px;
+  height: 3px;
+  background: #00ffff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 900px) {
+  .navbar__links ul {
+    flex-direction: column;
+    position: fixed;
+    top: 75px;
+    right: -100%;
+    width: 250px;
+    background: rgba(15, 25, 40, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 2rem;
+    border-left: 2px solid rgba(0, 255, 255, 0.4);
+    border-radius: 10px 0 0 10px;
+    transition: all 0.4s ease;
+    box-shadow: -8px 0 25px rgba(0, 255, 255, 0.2);
+  }
+
+  .navbar__links.active ul {
+    right: 0;
+  }
+
+  .navbar__btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* === Extra Glow Effect on Scroll === */
+.navbar.scrolled {
+  background: rgba(15, 25, 40, 0.85);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}

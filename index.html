@@ -1,35 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NeuraVision.AI</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="navbar__logo"></div>
-      <div class="navbar__links"></div>
-      <div class="navbar__btn"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuraVision.AI</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" id="navbar">
+        <a class="logo" href="#">NeuraVision.<span class="logo--accent">AI</span></a>
 
-      <!-- Animated Hamburger -->
-      <div class="menu-toggle">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+        <div class="navbar__links" id="navLinks">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar__actions">
+          <button class="login-btn" id="loginBtn">Login</button>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">Theme</button>
+          <div class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero__inner">
+          <h1 class="hero__heading">Build smarter interfaces with AI</h1>
+          <p class="hero__tagline">NeuraVision.AI — design, detect, deploy. Beautiful UI, intelligent UX.</p>
+          <div class="hero__ctas">
+            <a href="" class="hero__btn">Get Started</a>
+            <a href="#contact" class="hero__btn hero__btn--ghost">Get in touch</a>
+          </div>
+        </div>
+
+        <!-- subtle decorative shapes -->
+        <div class="orb orb--one" aria-hidden="true"></div>
+        <div class="orb orb--two" aria-hidden="true"></div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="about__container">
+          <div class="about__content">
+            <h2>About NeuraVision</h2>
+            <p>We create intelligent frontends and design experiences that feel natural — fast animations, accessible markup, and pixel-perfect components.</p>
+            <ul class="about__features">
+              <li>Design systems & UI components</li>
+              <li>Responsive web apps</li>
+              <li>Performance & accessibility</li>
+            </ul>
+            <a class="about__btn" href="#contact">Work with us</a>
+          </div>
+
+          <div class="about__image">
+            <img src="img.png" alt="NeuraVision design preview">
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <h2 class="features__heading">Our Key Features</h2>
+        <div class="features__cards">
+          <article class="feature__card">
+            <div class="feature__icon">🧠</div>
+            <h3>AI-enhanced UX</h3>
+            <p>Adaptive interfaces that personalise content and improve conversion.</p>
+          </article>
+
+          <article class="feature__card">
+            <div class="feature__icon">⚡</div>
+            <h3>Performance-first</h3>
+            <p>Optimised assets and buttery-smooth interactions.</p>
+          </article>
+
+          <article class="feature__card">
+            <div class="feature__icon">🔒</div>
+            <h3>Security & Privacy</h3>
+            <p>Secure by design — privacy friendly defaults and hardened endpoints.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="contact__container">
+          <div class="contact__header">
+            <h2 class="contact__title">Contact Us</h2>
+            <p class="contact__subtitle">Let's collaborate — tell us about your project.</p>
+          </div>
+
+          <div class="contact__grid">
+            <div class="contact__cards">
+              <div class="contact__card">
+                <strong>Email</strong>
+                <p>hello@neuravision.ai</p>
+              </div>
+              <div class="contact__card">
+                <strong>Location</strong>
+                <p>Karachi, Pakistan</p>
+              </div>
+            </div>
+
+            <form class="contact__form" id="contactForm" action="#" novalidate>
+              <div class="field-row">
+                <input type="text" name="name" placeholder="Your name" required>
+                <input type="email" name="email" placeholder="Your email" required>
+              </div>
+              <textarea name="message" rows="6" placeholder="Message" required></textarea>
+              <button type="submit" class="contact__btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <a class="footer__logo" href="#">
+              NeuraVision.<span class="logo--accent">AI</span>
+            </a>
+            <p class="footer__description">
+              Building intelligent interfaces and AI-enhanced user experiences that transform digital interactions.
+            </p>
+            <div class="footer__social">
+              <a href="#" class="social__link" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social__link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social__link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="social__link" aria-label="Dribbble">
+                <i class="fab fa-dribbble"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer__links">
+            <div class="footer__column">
+              <h3 class="footer__title">Product</h3>
+              <ul class="footer__list">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">Solutions</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Documentation</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h3 class="footer__title">Company</h3>
+              <ul class="footer__list">
+                <li><a href="#about">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h3 class="footer__title">Legal</h3>
+              <ul class="footer__list">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+                <li><a href="#">Security</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <div class="footer__copyright">
+            <p>&copy; 2024 NeuraVision.AI. All rights reserved.</p>
+          </div>
+          <div class="footer__extra">
+            <p>Made with <span class="heart">❤️</span> for beautiful interfaces</p>
+          </div>
+        </div>
       </div>
-    </nav>
-  </header>
 
-  <main>
-    <section id="home"></section>
-    <section id="about"></section>
-    <section id="services"></section>
-    <section id="contact"></section>
-  </main>
+      <!-- Footer decorative elements -->
+      <div class="footer__orb footer__orb--left" aria-hidden="true"></div>
+      <div class="footer__orb footer__orb--right" aria-hidden="true"></div>
+    </footer>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
-D:\SIGMA WEB DEV COURSE\mini projects\class02\JS-MINI-PROJECTS-PART2
